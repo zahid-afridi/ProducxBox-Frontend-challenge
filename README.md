@@ -12,7 +12,8 @@ Follow these steps to set up and run the project:
 ✔️ Users can **upload** products  
 ✔️ Users can **add products to cart**  
 ✔️ Users can **buy** products  
-
+✔️ The product will be stored in local storage
+✔️ Even after a refresh or opening in a new tab, users will see their checkout products
 ---
 
 ## Setup and Running the Project  
