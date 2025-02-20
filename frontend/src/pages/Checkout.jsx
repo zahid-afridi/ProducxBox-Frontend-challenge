@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import BaseUrl from "../utlis/BaseUrl";
+import toast from "react-hot-toast";
 
 
 export default function Checkout() {
 
-  const {cart,addToCart,removeFromCart,decrement}=useContext(CartContext)
+  const {cart,addToCart,removeFromCart,decrement,clearAllProducts}=useContext(CartContext)
 
 
   
@@ -17,6 +18,11 @@ export default function Checkout() {
     }, 0);
   };
   
+  const handleCheckout = () => {
+    localStorage.removeItem("cart");
+    clearAllProducts();
+    toast.success('Order placed successfully')
+  };
 
   return (
     <div className="container mt-5">
@@ -74,7 +80,7 @@ export default function Checkout() {
             <div className="card p-3 shadow-sm">
               <h5>Order Summary</h5>
               <p>Total: <strong>${getTotalPrice().toFixed(2)}</strong></p>
-              <button className="btn btn-success w-100">Proceed to Checkout</button>
+              <button className="btn btn-success w-100"  onClick={handleCheckout}>Proceed to Checkout</button>
             </div>
           </div>
         </div>

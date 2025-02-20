@@ -40,8 +40,12 @@ const ContextProvider = ({ children }) => {
         );
     };
 
+    const clearAllProducts = () => {
+        setCart([]);
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart,decrement }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart,decrement ,clearAllProducts}}>
             {children}
         </CartContext.Provider>
     );
