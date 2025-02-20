@@ -12,7 +12,7 @@ export default function Items() {
   useEffect(() => {
     GetItems();
   }, []);
-
+ localStorage.removeItem("cart");
   const GetItems = async () => {
     try {
       const req = await fetch(`${BaseUrl}/items`, {
